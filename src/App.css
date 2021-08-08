@@ -48,3 +48,12 @@
         margin-top: 40vh;
     }
 }
+.contain{
+  display: flex;
+  flex-wrap: wrap;
+ justify-content: center;
+}
+.card{
+  width: 30%;
+  height: 30%;
+}

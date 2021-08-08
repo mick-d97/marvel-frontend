@@ -12,11 +12,11 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const video = [video1];
   const history = useHistory()
-
+  const nullPath= "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/characters");
+        const response = await axios.get("https://backendmrvlmd.herokuapp.com/characters");
         //console.log(response.data);
         setData(response.data);
         setIsLoading(false);
@@ -40,20 +40,23 @@ const Home = () => {
         <video src={video} autoPlay={true} muted={true} loop={true}></video>
       </div>
       <Nav />
+      <div className="contain">
       {data.results.map((character, index) => {
         return (
-         
-          <div
+          <div className="card"
             key={character._id}   >
-            
+            <p> {character.name} </p>
+            <p> {character.title} </p>
             <img
-              src={character.thumbnail.path + "." + character.thumbnail.extension}
+            
+              src= {character.thumbnail.path + "." + character.thumbnail.extension}
               alt="" onClick={ ()=>history.push(`/comics/${character._id}`) }
             />
           </div>
-         
+          
         );
       })}
+      </div>
     </div>
   );
 };

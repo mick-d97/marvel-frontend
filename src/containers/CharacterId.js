@@ -11,7 +11,7 @@ const CharacterId = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/comics/${id}`);
+        const response = await axios.get(`https://backendmrvlmd.herokuapp.com/${id}`);
         console.log(response.data);
         setData(response.data);
         setIsLoading(false);
@@ -27,17 +27,20 @@ const CharacterId = () => {
       <img src={loading} alt="" />
     </div>
   ) : (
-    <div>
+    <div className="contain">
       {data.comics.map((elem, index) => {
         return (
-          <div key={elem._id}>
-            <p>{elem.title}</p>
-            <p> {elem.description} </p>
-            <img
-              src={elem.thumbnail.path + "." + elem.thumbnail.extension}
-              alt={elem.title}
-            />
-          </div>
+          <div className="card">
+            <div key={elem._id}>
+          <p>{elem.title}</p>
+          <p> {elem.description} </p>
+          <img
+            src={elem.thumbnail.path + "." + elem.thumbnail.extension}
+            alt={data.title}
+          />
+        </div>
+        </div>
+          
         );
       })}
     </div>
