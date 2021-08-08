@@ -1,1 +1,50 @@
 /* Other rules */
+/*=======================Nav====================*/
+.nav{
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  
+  
+}
+.nav>button{
+  height: 4vh;
+  width: 20vh;
+  font-size: 30px;
+  background-color: black;
+  color: red;
+  border: none;
+}
+
+.video {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+.video>video{
+    width: 80%;
+}
+.gif > img {
+  width: 25vh;
+  padding-top: 2vh;
+}
+.gif {
+    width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+.loading {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-color: #0C0C0C;
+}
+@media(min-width:320px){
+    .loading>img{
+        margin-top: 40vh;
+    }
+}
