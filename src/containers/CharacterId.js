@@ -11,7 +11,7 @@ const CharacterId = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://backendmrvlmd.herokuapp.com/${id}`);
+        const response = await axios.get(`https://backendmrvlmd.herokuapp.com/comics/${id}`);
         console.log(response.data);
         setData(response.data);
         setIsLoading(false);
